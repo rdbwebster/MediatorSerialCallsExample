@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+            xmlns="http://www.example.org"
+            targetNamespace="http://www.example.org"
+            elementFormDefault="qualified">
+
+   <xs:element name="EmployeeRequest">
+     <xs:complexType>
+        <xs:sequence>
+            <xs:element name="eNumber" type="xs:int"/>
+            <xs:element name="eFirstName" type="xs:string"/>
+            <xs:element name="eLastName" type="xs:string"/>
+            <xs:element name="eUserId" type="xs:string" maxOccurs="1"
+                        minOccurs="0"/>
+            <xs:element name="eDeptNum" type="xs:string"/>
+            <xs:element name="eDeptName" type="xs:string" maxOccurs="1" minOccurs="0"/>
+            <xs:element name="eDeptOrg" type="xs:string" maxOccurs="1" minOccurs="0"  default="1"/>
+            <xs:element name="eDeptCostCtr" type="xs:string" maxOccurs="1" minOccurs="0"/>
+            </xs:sequence>
+      </xs:complexType>
+   </xs:element>
+</xs:schema>
+

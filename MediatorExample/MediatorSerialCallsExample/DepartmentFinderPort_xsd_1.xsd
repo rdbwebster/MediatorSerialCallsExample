@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is Oracle JAX-WS 2.1.5. -->
+<xs:schema xmlns:tns="http://departmentdetailsservice/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://departmentdetailsservice/">
+
+<xs:element name="DepartmentFinderFault" type="tns:DepartmentFinderFault"/>
+
+<xs:element name="getDepartmentByMgrEmailId" type="tns:getDepartmentByMgrEmailId"/>
+
+<xs:element name="getDepartmentByMgrEmailIdResponse" type="tns:getDepartmentByMgrEmailIdResponse"/>
+
+<xs:element name="getDepartmentDetails" type="tns:getDepartmentDetails"/>
+
+<xs:element name="getDepartmentDetailsResponse" type="tns:getDepartmentDetailsResponse"/>
+
+<xs:element name="getDepartments" type="tns:getDepartments"/>
+
+<xs:element name="getDepartmentsResponse" type="tns:getDepartmentsResponse"/>
+
+<xs:complexType name="getDepartments">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="getDepartmentsResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getDepartmentByMgrEmailId">
+<xs:sequence>
+<xs:element name="mgrEmailId" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getDepartmentByMgrEmailIdResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:departmentDetails" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="departmentDetails">
+<xs:sequence>
+<xs:element name="departmentCostCenter" type="xs:string" minOccurs="0"/>
+<xs:element name="departmentManagerEmail" type="xs:string" minOccurs="0"/>
+<xs:element name="departmentName" type="xs:string" minOccurs="0"/>
+<xs:element name="departmentNumber" type="xs:string" minOccurs="0"/>
+<xs:element name="departmentOrg" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="DepartmentFinderFault">
+<xs:sequence>
+<xs:element name="description" type="xs:string" minOccurs="0"/>
+<xs:element name="faultInfo" type="tns:faultBean" minOccurs="0"/>
+<xs:element name="message" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="faultBean">
+<xs:sequence>
+<xs:element name="message" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getDepartmentDetails">
+<xs:sequence>
+<xs:element name="deptNumber" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getDepartmentDetailsResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:departmentDetails" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>
