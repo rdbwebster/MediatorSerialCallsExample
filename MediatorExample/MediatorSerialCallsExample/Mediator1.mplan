@@ -20,7 +20,7 @@
                      <forward reference="WriteEmployeeDetails"
                               operation="Write"/>
                   </onReply>
-                  <onFault type="Fault"/>
+                  <onFault type="DepartmentFinderFault"/>
                </invoke>
             </action>
          </case>
